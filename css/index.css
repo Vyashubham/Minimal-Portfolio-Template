@@ -1,0 +1,69 @@
+/* Define standard variables and values for website */
+body {
+  background-color: #FFFBF6;
+  margin: 5vh;
+  padding: 0; }
+
+#navbar {
+  background-color: #FFFBF6;
+  position: fixed;
+  top: -50px;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  height: 10vh; }
+
+#navbar a {
+  float: left;
+  display: block;
+  color: paleturquoise;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px; }
+
+.header {
+  background-color: orange;
+  display: flex;
+  height: 10vh;
+  width: 95vw; }
+
+.introduction-container {
+  background-color: #002D72;
+  height: 55vh;
+  width: 95vw;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 1vh;
+  font-size: 3rem;
+  text-align: center; }
+
+.introduction-inner {
+  background-color: turquoise;
+  grid-column: 2/4; }
+
+.projects {
+  background-color: yellow;
+  min-height: 55vh;
+  width: 95vw;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-auto-rows: 55vh;
+  gap: 1vh; }
+
+/* Grid items - odd ones */
+.projects > *:nth-child(odd) {
+  background-color: olive;
+  grid-column: 2; }
+
+/* Grid items - even ones */
+.projects > *:nth-child(even) {
+  background-color: oldlace;
+  grid-column: 3; }
+
+.footer {
+  background-color: lightcyan;
+  height: 10vh;
+  width: 95vw; }
+
+/*# sourceMappingURL=index.css.map */
