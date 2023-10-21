@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    color: white;
+}
+
+.title {
+    grid-column: 1 / span 3;
+    background-color: #e57373;
+}
+
+.text {
+    grid-column: 1 / span 2;
+    background-color: #81c784;
+}
+
+.img1 {
+    background-color: #64b5f6;
+}
+
+.img2 {
+    grid-column: 2 / span 2;
+    background-color: #ffb74d;
+}
+
+.img3 {
+    background-color: #ba68c8;
+}
