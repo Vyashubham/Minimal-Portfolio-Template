@@ -123,7 +123,7 @@ body {
   width: 90%; }
 
 .footer {
-  height: 10vh;
+  height: 8vh;
   width: 50vw;
   margin: 0 auto;
   display: grid;
@@ -171,6 +171,27 @@ body {
     text-align: left; }
 
   .projects-item {
-    grid-column: 1/5 !important; } }
+    grid-column: 1/5 !important; }
+
+  .footer {
+    grid-template-columns: 100%;
+    grid-template-rows: 3vh 3vh;
+    gap: 0; }
+
+  .social {
+    height: 100%;
+    width: 100%;
+    grid-row: 1;
+    grid-column: 1;
+    padding: 0;
+    margin: 0; }
+
+  .name {
+    height: 100%;
+    width: 100%;
+    grid-row: 2;
+    padding: 0;
+    margin: 0;
+    justify-content: center; } }
 
 /*# sourceMappingURL=index.css.map */
