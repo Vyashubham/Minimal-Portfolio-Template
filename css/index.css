@@ -1,8 +1,23 @@
 /* Define standard variables and values for website */
+html {
+  height: 100%;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
 body {
+  height: 100%;
   background-color: #FFFBF6;
-  margin: 5vh;
-  padding: 0; }
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  position: relative; }
+
+#navbar, .text-container, .header, .introduction-container, .projects, .footer, .text {
+  z-index: 2;
+  position: relative; }
 
 #navbar {
   background-color: #FFFBF6;
@@ -13,57 +28,155 @@ body {
   transition: top 0.3s;
   height: 10vh; }
 
-#navbar a {
-  float: left;
-  display: block;
-  color: paleturquoise;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 17px; }
-
 .header {
-  background-color: orange;
+  margin-top: 5vh;
   display: flex;
-  height: 10vh;
-  width: 95vw; }
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 10vh;
+  width: 100vw;
+  font-family: 'Flow Rounded'; }
 
 .introduction-container {
-  background-color: #002D72;
-  height: 55vh;
-  width: 95vw;
+  margin-top: 2vh;
+  height: 60vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-column-gap: 1vh;
-  font-size: 3rem;
-  text-align: center; }
+  grid-template-columns: 1fr 25vw 25vw 1fr;
+  /* Adjust the '200px' to your desired fixed width */
+  gap: 2vh;
+  font-size: 4rem;
+  align-items: top;
+  font-weight: 400;
+  color: #020947;
+  font-family: 'Playfair Display'; }
+
+.cryptic_text {
+  font-family: 'Playfair Display'; }
 
 .introduction-inner {
-  background-color: turquoise;
-  grid-column: 2/4; }
+  text-align: center;
+  grid-column: 2/4;
+  display: flex;
+  justify-content: flex;
+  align-items: top;
+  animation: mymove 5s; }
 
+@keyframes mymove {
+  from {
+    font-size: 2rem; }
+  to {
+    font-size: 1rem; } }
 .projects {
-  background-color: yellow;
-  min-height: 55vh;
-  width: 95vw;
+  margin-top: 2vh;
+  min-height: 50vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 1fr 25vw 25vw 1fr;
+  /* Adjust the '200px' to your desired fixed width */
   grid-auto-rows: 55vh;
-  gap: 1vh; }
+  gap: 2vh; }
 
 /* Grid items - odd ones */
 .projects > *:nth-child(odd) {
-  background-color: olive;
-  grid-column: 2; }
+  grid-column: 2;
+  height: 90%;
+  display: flex;
+  flex-direction: column; }
 
 /* Grid items - even ones */
 .projects > *:nth-child(even) {
-  background-color: oldlace;
-  grid-column: 3; }
+  height: 90%;
+  grid-column: 3;
+  display: flex;
+  flex-direction: column; }
+
+.card-image {
+  background-color: darkblue;
+  height: 30vh;
+  width: 100%;
+  display: flex; }
+
+.card-image > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; }
+
+.card-category {
+  height: 2%;
+  width: 90%;
+  padding: 2vh;
+  padding-left: 0;
+  font-weight: 600;
+  font-size: .8rem; }
+
+.card-title {
+  height: 5%;
+  width: 90%;
+  font-weight: 600;
+  font-size: 1.2rem; }
+
+.card-blurb {
+  padding-top: .5rem;
+  line-height: 1.5rem;
+  height: 25%;
+  width: 90%; }
 
 .footer {
-  background-color: lightcyan;
   height: 10vh;
-  width: 95vw; }
+  width: 100vw; }
+
+@media (max-height: 680px), screen and (orientation: portrait) {
+  body {
+    width: 90vw; }
+
+  .header {
+    font-size: .7rem;
+    justify-content: flex-start; }
+
+  .projects {
+    width: 90vw;
+    gap: 1px; }
+
+  .introduction-inner {
+    grid-column: 1/5;
+    font-size: 2rem;
+    text-align: left; }
+
+  .projects-item {
+    grid-column: 1/5 !important; } }
+.game-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  background-color: rgba(255, 251, 246, 0.8);
+  padding: 10px;
+  border-radius: 8px; }
+
+.game-instructions {
+  display: inline-block;
+  margin-right: 20px; }
+
+button#gameModeButton {
+  background-color: #020947;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer; }
+
+body.game-mode #navbar, body.game-mode .text-container, body.game-mode .header, body.game-mode .introduction-container, body.game-mode .projects, body.game-mode .footer, body.game-mode .text {
+  display: none; }
+
+body.game-mode .game-controls {
+  bottom: 50%;
+  transform: translate(-50%, 50%); }
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 /*# sourceMappingURL=index.css.map */

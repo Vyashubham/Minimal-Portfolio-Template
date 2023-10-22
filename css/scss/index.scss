@@ -3,12 +3,59 @@ $bgcolor: #FFFBF6;
 $textcolor: #002D72;
 $fontsize: 18px;
 
+html{
+    height: 100%;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 body {
+    height: 100%;
     background-color: $bgcolor;
-    margin: 5vh;
-    padding: 0;
+    // margin: minmax(auto, 5vh);
+    // padding: 0;
+    overflow-x: hidden; // need to know why!
+    // font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+
+    
 
 }
+
+#navbar, .text-container, .header, .introduction-container, .projects, .footer, .text {
+  z-index: 2;
+  position: relative;
+}
+
+// .helloWorld{
+//     height: 100vh;
+//     width: 100vw;
+//     background-color: palegoldenrod;
+//     position: absolute;
+//     z-index: 3;
+//     animation: mymove;
+//     animation-duration: 2s;
+//     // display: none;
+//     // animation: fadeOutUp;
+//     // animation-duration: 10s;
+//     // transition: all .3s ease-in;
+// }
+
+// @keyframes mymove {
+//     from {opacity: 1;}
+//     to {opacity: 0;
+//     top: -5000}
+//   }
+
+// .animate__animated.animate__fadeOutUp{
+//     --animation-delay: 20s !important;
+//     --animate-duration: 2s !important;
+//     opacity: 1 !important;
+// }
 #navbar {
     background-color: $bgcolor;
     position: fixed;
@@ -19,84 +66,237 @@ body {
     height: 10vh;
   }
   
-  #navbar a {
-    float: left;
-    display: block;
-    color: paleturquoise;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none;
-    font-size: 17px;
-  }
+
   
 .header{
-    background-color: orange;
+    // background-color: orange;
 
+    margin-top: 5vh;
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    min-height: 10vh;
+    width: 100vw;
     
-    height: 10vh;
-    width: 95vw;
+    font-family: 'Flow Rounded';
     
 }
 
 .introduction-container{
-    background-color: #002D72;
+    // background-color: #002D72;
 
-    height: 55vh;
-    width: 95vw;
+    margin-top: 2vh;
+    height: 60vh;
+    width: 100vw;
 
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-column-gap: 1vh;
+    grid-template-columns: 1fr 25vw 25vw 1fr; /* Adjust the '200px' to your desired fixed width */
+    gap: 2vh;
 
-    font-size: 3rem;
-    text-align: center;
-
+    font-size: 4rem;
+    align-items: top;
+    font-weight: 400;
+    color: rgb(2, 9, 71);
+    font-family: 'Playfair Display';
 }
 
+.cryptic_text{
+    font-family: 'Playfair Display';
+}
 .introduction-inner{
-    background-color: turquoise;
-
+    // background-color: turquoise;
+    text-align: center;
     grid-column: 2/4;
-    // grid:;
+    display: flex;
+    justify-content: flex;
+    align-items: top;
+    animation: mymove 5s;
+    
 }
+
+@keyframes mymove {
+    from {font-size: 2rem;}
+    to {font-size: 1rem;}
+}
+  
 
 .projects{
-    background-color: yellow;
+    // background-color: yellow;
 
-    min-height: 55vh;
-    width: 95vw;
+    margin-top: 2vh;
+    min-height: 50vh;
+    width: 100vw;
 
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 25vw 25vw 1fr; /* Adjust the '200px' to your desired fixed width */
     grid-auto-rows: 55vh;
     // grid-column-gap: 10vh;
-    gap: 1vh;
+    gap: 2vh;
     // box-sizing: border-box;
     // justify-content: center;
     // place-items: center;
+
+    
 }
 
 /* Grid items - odd ones */
 .projects > *:nth-child(odd) {
-    background-color: olive;
+    // background-color: olive;
     grid-column: 2;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+
   }
   
   /* Grid items - even ones */
 .projects > *:nth-child(even) {
-    background-color: oldlace;
+    // background-color: oldlace;
+    height: 90%;
     grid-column: 3;
+    display: flex;
+    flex-direction: column;
   }
 
 
+//   <div class="card-image"></div>
+//   <div class="card-category"></div>
+//   <div class="card-title"></div>
+//   <div class="card-blurb"></div>
+// </div>
+
+.card-image{
+    background-color: darkblue;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    // align-items: flex-end;
+}
+
+.card-image > img{
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    // background-color: #002D72;
+
+    
+}
+.card-category{
+    // background-color: blue;
+
+    height: 2%;
+    width: 90%;
+
+    padding: 2vh;
+    padding-left: 0;
+    font-weight: 600;
+    // letter-spacing: .01rem;
+    font-size: .8rem;
+}
+.card-title{
+    // background-color: cyan;
+
+    height: 5%;
+    width: 90%;
+    font-weight: 600;
+    // letter-spacing: .01rem;
+    font-size: 1.2rem;
+
+    
+}
+.card-blurb{
+    // background-color: lightblue;
+    padding-top: .5rem;
+    line-height: 1.5rem;
+    height: 25%;
+    width: 90%;
+}
+
 .footer{
-    background-color: lightcyan;
+    // background-color: lightcyan;
 
     height: 10vh;
-    width: 95vw;
+    width: 100vw;
 
     // display: grid;
     // position: fixed;
     // bottom: 0;
+}
+
+@media (max-height: 680px), screen and (orientation: portrait) {
+   body{
+    // background-color: red;
+    width: 90vw;
+   }
+
+   .header{
+    font-size: .7rem;
+    justify-content: flex-start;
+    // align-items: flex-start;
+   }
+
+   
+   .projects{
+    width: 90vw;
+    // background-color: #002D72;
+    gap: 1px;
+  
+   }
+
+
+
+    .introduction-inner{
+        grid-column: 1/5;
+        font-size: 2rem;
+        text-align: left;
+        // padding-left: 1.5vw;
+    }
+
+    .projects-item {
+        // background-color: yellow;
+        grid-column: 1/5 !important;
+    }
+
+    
+
+}
+  
+.game-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  background-color: rgba(255, 251, 246, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.game-instructions {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+button#gameModeButton {
+  background-color: #020947;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+body.game-mode #navbar, body.game-mode .text-container, body.game-mode .header, body.game-mode .introduction-container, body.game-mode .projects, body.game-mode .footer, body.game-mode .text {
+    display: none;
+}
+body.game-mode .game-controls {
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
