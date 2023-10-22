@@ -39,7 +39,7 @@ body {
 
 .introduction-container {
   margin-top: 2vh;
-  height: 60vh;
+  height: 75vh;
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 25vw 25vw 1fr;
@@ -51,9 +51,6 @@ body {
   color: #020947;
   font-family: 'Playfair Display'; }
 
-.cryptic_text {
-  font-family: 'Playfair Display'; }
-
 .introduction-inner {
   text-align: center;
   grid-column: 2/4;
@@ -62,11 +59,6 @@ body {
   align-items: top;
   animation: mymove 5s; }
 
-@keyframes mymove {
-  from {
-    font-size: 2rem; }
-  to {
-    font-size: 1rem; } }
 .projects {
   margin-top: 2vh;
   min-height: 50vh;
@@ -78,18 +70,30 @@ body {
   gap: 2vh; }
 
 /* Grid items - odd ones */
-.projects > *:nth-child(odd) {
+.projects > * {
   grid-column: 2;
   height: 90%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+  /* smooth transition */
+  /* Just adding some styles to visualize the element. You can remove or adjust these */
+  /* width: 100%;
+            height: 20vh; */ }
 
 /* Grid items - even ones */
 .projects > *:nth-child(even) {
   height: 90%;
   grid-column: 3;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+  /* smooth transition */
+  /* Just adding some styles to visualize the element. You can remove or adjust these */
+  /* width: 100%;
+            height: 20vh; */ }
 
 .card-image {
   background-color: darkblue;
@@ -121,6 +125,16 @@ body {
   line-height: 1.5rem;
   height: 25%;
   width: 90%; }
+
+.cardfade {
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+  /* smooth transition */
+  /* Just adding some styles to visualize the element. You can remove or adjust these */
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  /* margin: 1000px 0; Large margin to ensure scrolling */ }
 
 .footer {
   height: 8vh;
