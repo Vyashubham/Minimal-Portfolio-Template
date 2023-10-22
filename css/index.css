@@ -15,9 +15,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   position: relative; }
 
-#navbar, .text-container, .header, .introduction-container, .projects, .footer, .text {
-  z-index: 2;
-  position: relative; }
+.card-anchor {
+  text-decoration: none;
+  color: inherit; }
 
 #navbar {
   background-color: #FFFBF6;
