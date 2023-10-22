@@ -217,12 +217,48 @@ body {
     // background-color: lightcyan;
 
     height: 10vh;
-    width: 100vw;
+    width: 50vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    gap: 1vh;
 
-    // display: grid;
     // position: fixed;
+
     // bottom: 0;
+    font-size: .7rem;
 }
+
+.name > a{
+  text-decoration: none;
+  color: inherit;
+
+}
+.social > a{
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.social > span{
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+.name{
+  // background-color: palevioletred;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.social{
+  // background-color: tomato;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (max-height: 680px), screen and (orientation: portrait) {
    body{
@@ -260,43 +296,4 @@ body {
 
     
 
-}
-  
-.game-controls {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  background-color: rgba(255, 251, 246, 0.8);
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.game-instructions {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-button#gameModeButton {
-  background-color: #020947;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 15px;
-  cursor: pointer;
-}
-
-body.game-mode #navbar, body.game-mode .text-container, body.game-mode .header, body.game-mode .introduction-container, body.game-mode .projects, body.game-mode .footer, body.game-mode .text {
-    display: none;
-}
-body.game-mode .game-controls {
-    bottom: 50%;
-    transform: translate(-50%, 50%);
-}
-
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
