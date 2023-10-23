@@ -137,7 +137,7 @@ body {
 }
 
 /* Grid items - odd ones */
-.projects> *{
+.projects>*:nth-child(odd) {
   // background-color: olive;
   grid-column: 2;
   height: 90%;
@@ -210,7 +210,7 @@ body {
 .card-title {
   // background-color: cyan;
 
-  height: 5%;
+  min-height: 5%;
   width: 90%;
   font-weight: 600;
   // letter-spacing: .01rem;
@@ -293,6 +293,7 @@ screen and (orientation: portrait) {
   body {
     // background-color: red;
     width: 90vw;
+    overflow-x: hidden !important;
   }
 
   .header {
@@ -312,17 +313,26 @@ screen and (orientation: portrait) {
 
 
   .introduction-inner {
+    width: 80%;
     grid-column: 1/5;
     font-size: 2rem;
     text-align: left;
     // padding-left: 1.5vw;
   }
 
-  .projects-item {
-    // background-color: yellow;
-    grid-column: 1/5 !important;
-  }
+ /* Grid items - odd ones */
+.projects > *:nth-child(odd) {
+  // background-color: yellow;
+  grid-column: 1/5 !important;
 
+}
+
+/* Grid items - even ones */
+.projects > *:nth-child(even) {
+  // background-color: yellow;
+  grid-column: 1/5 !important;
+
+}
   .footer {
     grid-template-columns: 100%;
     grid-template-rows: 3vh 3vh;

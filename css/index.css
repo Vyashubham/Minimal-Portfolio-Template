@@ -70,7 +70,7 @@ body {
   gap: 2vh; }
 
 /* Grid items - odd ones */
-.projects > * {
+.projects > *:nth-child(odd) {
   grid-column: 2;
   height: 90%;
   display: flex;
@@ -115,7 +115,7 @@ body {
   font-size: .8rem; }
 
 .card-title {
-  height: 5%;
+  min-height: 5%;
   width: 90%;
   font-weight: 600;
   font-size: 1.2rem; }
@@ -169,7 +169,8 @@ body {
 
 @media (max-height: 680px), screen and (orientation: portrait) {
   body {
-    width: 90vw; }
+    width: 90vw;
+    overflow-x: hidden !important; }
 
   .header {
     font-size: .7rem;
@@ -180,11 +181,17 @@ body {
     gap: 1px; }
 
   .introduction-inner {
+    width: 80%;
     grid-column: 1/5;
     font-size: 2rem;
     text-align: left; }
 
-  .projects-item {
+  /* Grid items - odd ones */
+  .projects > *:nth-child(odd) {
+    grid-column: 1/5 !important; }
+
+  /* Grid items - even ones */
+  .projects > *:nth-child(even) {
     grid-column: 1/5 !important; }
 
   .footer {
